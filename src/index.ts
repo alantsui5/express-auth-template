@@ -7,7 +7,27 @@ import * as cors from "cors";
 import routes from "./routes";
 
 //Connects to the Database -> then starts the express
-createConnection()
+createConnection({
+  "name":"heroku",
+  "type": "postgres",
+  "url": process.env.DATABASE_URL,
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+     "src/entity/**/*.ts"
+  ],
+  "migrations": [
+     "src/migration/**/*.ts"
+  ],
+  "subscribers": [
+     "src/subscriber/**/*.ts"
+  ],
+  "cli": {
+     "entitiesDir": "src/entity",
+     "migrationsDir": "src/migration",
+     "subscribersDir": "src/subscriber"
+  }
+})
   .then(async connection => {
     // Create a new express application instance
     const app = express();

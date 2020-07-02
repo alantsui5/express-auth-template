@@ -4,8 +4,8 @@
   "description": "Awesome project developed with TypeORM.",
   "devDependencies": {
     "@types/node": "^8.10.61",
-    "ts-node": "3.3.0",
-    "typescript": "2.5.2"
+    "ts-node": "^3.3.0",
+    "typescript": "^2.9.2"
   },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -23,13 +23,13 @@
     "pg": "^8.2.1",
     "reflect-metadata": "^0.1.10",
     "sqlite3": "^4.0.3",
-    "ts-node-dev": "^1.0.0-pre.49",
+    "ts-node-dev": "^1.0.0-pre.50",
     "typeorm": "^0.2.25"
   },
   "scripts": {
     "tsc": "tsc",
     "start": "set debug=* && ts-node-dev --respawn --transpileOnly ./src/index.ts",
-    "prod": "tsc && node ./build/app.js",
+    "prod": "tsc && node ./build/index.js",
     "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run"
   }
 }
