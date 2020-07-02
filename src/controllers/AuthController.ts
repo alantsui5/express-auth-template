@@ -10,6 +10,7 @@ class AuthController {
   static login = async (req: Request, res: Response) => {
     //Check if username and password are set
     let { username, password } = req.body;
+    console.log(`${username} ${password}`)
     if (!(username && password)) {
       res.status(400).send();
     }
