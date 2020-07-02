@@ -17,7 +17,7 @@ export class User {
 
   @Column()
   @Length(4, 20)
-  username: string;
+  public username: string;
 
   @Column()
   @Length(4, 100)
