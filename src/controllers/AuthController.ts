@@ -23,7 +23,6 @@ class AuthController {
     } catch (error) {
       res.status(401).send();
     }
-    console.log(user.password);
     //Check if encrypted password match
     if (!user.checkIfUnencryptedPasswordIsValid(password)) {
       res.status(401).send();

@@ -40,6 +40,7 @@ export class User {
   }
 
   checkIfUnencryptedPasswordIsValid(unencryptedPassword: string) {
+    console.log(bcrypt.compareSync(unencryptedPassword, this.password));
     return bcrypt.compareSync(unencryptedPassword, this.password);
   }
 }
