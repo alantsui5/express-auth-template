@@ -16,7 +16,7 @@ import { Router } from "express";
   );
 
   //Create a new user
-  router.post("/", [checkJwt, checkRole(["ADMIN"])], UserController.newUser);
+  router.post("/", /*[checkJwt, checkRole(["ADMIN"])],*/ UserController.newUser);
 
   //Edit one user
   router.patch(
