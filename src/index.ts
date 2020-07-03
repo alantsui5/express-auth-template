@@ -5,10 +5,10 @@ import * as bodyParser from "body-parser";
 import * as helmet from "helmet";
 import * as cors from "cors";
 import routes from "./routes";
-import herokuConfig from "./config/ormconfig"
+import ormConfig from "./config/ormconfig"
 
 //Connects to the Database -> then starts the express
-createConnection(herokuConfig)
+createConnection(ormConfig)
   .then(async connection => {
     // Create a new express application instance
     const app = express();
