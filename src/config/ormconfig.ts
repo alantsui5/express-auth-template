@@ -45,7 +45,7 @@ const postgresConfig:Object = {
   }
 }
 
-const sqliteConfig = {
+const sqliteConfig:Object = {
   "name":"sqlite",
   "type": "sqlite",
   "database": "database.sqlite",
@@ -67,4 +67,4 @@ const sqliteConfig = {
   }
 }
 
-export default herokuConfig
+export default process.env.Cloud?herokuConfig:sqliteConfig
