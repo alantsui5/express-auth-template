@@ -10,20 +10,18 @@ class AuthController {
   static login = async (req: Request, res: Response) => {
     //Check if username and password are set
     let { username, password } = req.body;
-    console.log(`${username} ${password}`)
     if (!(username && password)) {
       res.status(400).send();
     }
-
     //Get user from database
     const userRepository = getRepository(User);
-    let user: User;
-    try {
-      user = await userRepository.findOneOrFail({ where: { username } });
-    } catch (error) {
-      res.status(401).send();
+      let user: User;
+      try {
+        user = await userRepository.findOneOrFail({ where: { username } });
+      } catch (error) {
+        res.status(401).send();
     }
-    console.log(user.id)
+
     //Check if encrypted password match
     if (!user.checkIfUnencryptedPasswordIsValid(password)) {
       res.status(401).send();
@@ -40,6 +38,36 @@ class AuthController {
     //Send the jwt in the response
     res.send(token);
   };
+
+  static Register = async (req:Request, res:Response) => {
+    let { username, password, role } = req.body;
+    let user = new User();
+    user.username = username;
+    user.password = password;
+    user.role = role;
+
+    //Validade if the parameters are ok
+    const errors = await validate(user);
+    if (errors.length > 0) {
+      res.status(400).send(errors);
+      return;
+    }
+
+    //Hash the password, to securely store on DB
+    user.hashPassword();
+
+    //Try to save. If fails, the username is already in use
+    const userRepository = getRepository(User);
+    try {
+      await userRepository.save(user);
+    } catch (e) {
+      res.status(409).send("username already in use");
+      return;
+    }
+
+    //If all ok, send 201 response
+    res.status(201).send("User created");
+  }
 
   static changePassword = async (req: Request, res: Response) => {
     //Get ID from JWT

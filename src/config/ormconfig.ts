@@ -1,4 +1,4 @@
-const herokuConfig = {
+const herokuConfig:Object = {
   "type": "postgres",
   "url": process.env.DATABASE_URL,
   "synchronize": true,
@@ -45,4 +45,4 @@ const postgresConfig = {
   }
 }
 
-export = herokuConfig
+export default herokuConfig
