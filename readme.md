@@ -13,7 +13,7 @@ It also add some functionalities for better portability
 * Add postgreSQL configurations by `ormconfig.ts` 
 * Change the ormconfig by detecting deployment environment
 * Add dotenv
-* Deployed to heroku
+* Deployed to heroku with heroku's postgreSQL
 
 ## API Documentations
 
