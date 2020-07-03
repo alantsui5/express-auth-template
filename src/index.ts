@@ -8,7 +8,7 @@ import routes from "./routes";
 
 //Connects to the Database -> then starts the express
 createConnection({
-  "name":"default",
+  "name":"heroku",
   "type": "postgres",
   "url": process.env.DATABASE_URL,
   "synchronize": true,
