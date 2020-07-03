@@ -1,4 +1,6 @@
-const herokuConfig:Object = {
+import { ConnectionOptions } from "typeorm";
+
+const herokuConfig:ConnectionOptions = {
   "type": "postgres",
   "url": process.env.DATABASE_URL,
   "synchronize": true,
@@ -19,7 +21,7 @@ const herokuConfig:Object = {
   }
 }
 
-const postgresConfig:Object = {
+const postgresConfig:ConnectionOptions = {
   "name":"postgress",
   "type": "postgres",
   "host":"localhost",
@@ -45,7 +47,7 @@ const postgresConfig:Object = {
   }
 }
 
-const sqliteConfig:Object = {
+const sqliteConfig:ConnectionOptions = {
   "name":"sqlite",
   "type": "sqlite",
   "database": "database.sqlite",
