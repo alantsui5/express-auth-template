@@ -1,33 +1,48 @@
-const CI_DATABASE_URL = 'postgres://test:test@postgres:5432/test';
-
-const base = {
-  type: 'postgres',
-  url: process.env.DATABASE_URL,
-  schema: 'public',
-  synchronize: false,
-  logging: false,
-  entities: ['src/entity/*.ts'],
-  migrations: ['src/migration/*.ts'],
-  subscribers: ['src/subscriber/*.ts'],
-  cli: {
-    entitiesDir: 'src/entity',
-    migrationsDir: 'src/migration',
-    subscribersDir: 'src/subscriber'
-  },
-  migrationsRun: true
-};
-
-const config = {
-  test: {
-    url: process.env.CI ? CI_DATABASE_URL : process.env.DATABASE_TEST_URL,
-    dropSchema: true
-  },
-  development: {},
-  production: {
-    dropSchema: false
+const herokuConfig = {
+  "type": "postgres",
+  "url": process.env.DATABASE_URL,
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+     "src/entity/**/*.ts"
+  ],
+  "migrations": [
+     "src/migration/**/*.ts"
+  ],
+  "subscribers": [
+     "src/subscriber/**/*.ts"
+  ],
+  "cli": {
+     "entitiesDir": "src/entity",
+     "migrationsDir": "src/migration",
+     "subscribersDir": "src/subscriber"
   }
-};
+}
 
-module.exports = process.env.CI
-  ? { ...base, ...config['test'] }
-  : { ...base, ...config[process.env.NODE_ENV || 'development'] };
+const postgresConfig = {
+  "name":"default",
+  "type": "postgres",
+  "host":"localhost",
+  "port":5432,
+  "username":"test",
+  "password":"test",
+  "database":"test",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+     "src/entity/**/*.ts"
+  ],
+  "migrations": [
+     "src/migration/**/*.ts"
+  ],
+  "subscribers": [
+     "src/subscriber/**/*.ts"
+  ],
+  "cli": {
+     "entitiesDir": "src/entity",
+     "migrationsDir": "src/migration",
+     "subscribersDir": "src/subscriber"
+  }
+}
+
+export {postgresConfig, herokuConfig}
