@@ -45,4 +45,4 @@ const postgresConfig = {
   }
 }
 
-export {postgresConfig, herokuConfig}
+export = herokuConfig
