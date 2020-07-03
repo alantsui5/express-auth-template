@@ -5,28 +5,10 @@ import * as bodyParser from "body-parser";
 import * as helmet from "helmet";
 import * as cors from "cors";
 import routes from "./routes";
+import herokuConfig from "./config/ormconfig"
 
 //Connects to the Database -> then starts the express
-createConnection({
-  "type": "postgres",
-  "url": process.env.DATABASE_URL,
-  "synchronize": true,
-  "logging": false,
-  "entities": [
-     "src/entity/**/*.ts"
-  ],
-  "migrations": [
-     "src/migration/**/*.ts"
-  ],
-  "subscribers": [
-     "src/subscriber/**/*.ts"
-  ],
-  "cli": {
-     "entitiesDir": "src/entity",
-     "migrationsDir": "src/migration",
-     "subscribersDir": "src/subscriber"
-  }
-})
+createConnection(herokuConfig)
   .then(async connection => {
     // Create a new express application instance
     const app = express();
