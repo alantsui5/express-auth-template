@@ -15,3 +15,16 @@ It also add some functionalities for better portability
 * Deployed to heroku
 
 ## API Documentations
+
+# User
+These Routes need to be in role admin
+* Get: `/user/`： List All user
+* Post: `/user/`： Add a new user
+* Get: `/user/:id`: List a user with a ID
+* Patch: `/user/:id`: Edit a user with ID
+* Delete `/user/:id`: Delete a user with ID
+
+# Auth
+*  Get: `/login`: Login
+* Post: `/register`: Register
+* Post: `/change-password`: Change Password, need JWT
