@@ -20,7 +20,7 @@ const herokuConfig = {
 }
 
 const postgresConfig = {
-  "name":"default",
+  "name":"postgress",
   "type": "postgres",
   "host":"localhost",
   "port":5432,
