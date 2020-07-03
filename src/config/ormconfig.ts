@@ -19,7 +19,7 @@ const herokuConfig:Object = {
   }
 }
 
-const postgresConfig = {
+const postgresConfig:Object = {
   "name":"postgress",
   "type": "postgres",
   "host":"localhost",
@@ -27,6 +27,28 @@ const postgresConfig = {
   "username":"test",
   "password":"test",
   "database":"test",
+  "synchronize": true,
+  "logging": false,
+  "entities": [
+     "src/entity/**/*.ts"
+  ],
+  "migrations": [
+     "src/migration/**/*.ts"
+  ],
+  "subscribers": [
+     "src/subscriber/**/*.ts"
+  ],
+  "cli": {
+     "entitiesDir": "src/entity",
+     "migrationsDir": "src/migration",
+     "subscribersDir": "src/subscriber"
+  }
+}
+
+const sqliteConfig = {
+  "name":"sqlite",
+  "type": "sqlite",
+  "database": "database.sqlite",
   "synchronize": true,
   "logging": false,
   "entities": [
