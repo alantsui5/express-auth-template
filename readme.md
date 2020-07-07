@@ -1,6 +1,11 @@
 
 # Express JWT Template
 
+## Degit
+```
+npx degit https://github.com/alantsui5/express-template/
+```
+
 ## Origin
 It is a express template forked from [jwt-express-typeorm](https://github.com/andregardi/jwt-express-typeorm) with medium article [TypeScript Rest API with Express.js, JWT, Authorization Roles and TypeORM](https://medium.com/javascript-in-plain-english/creating-a-rest-api-with-jwt-authentication-and-role-based-authorization-using-typescript-fbfa3cab22a4)
 
