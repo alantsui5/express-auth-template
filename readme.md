@@ -3,8 +3,8 @@
 
 <img width="705" alt="Logo" src="https://user-images.githubusercontent.com/33037271/215788063-6b8d5ca3-3258-461f-9b57-5a0664b4df16.png">
 
-Provide a light TypeScript implementation on JWT with only express and TypeORM used. <br />
-Without implementing JWT without passport.JS library and NestJS framework, mades incremental feature update possible.
+Provide a light TypeScript implementation on JWT with Express and TypeORM used. <br />
+Without implementing JWT without passport.JS library and NestJS framework, mades incremental feature update more accessible.
 
 ## Core dependencies
 - JS Framework 👉 NodeJS 8.10.61
