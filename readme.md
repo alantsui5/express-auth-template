@@ -7,8 +7,9 @@ Provide a light TypeScript implementation on JWT with only express and TypeORM u
 Without implementing JWT without passport.JS library and NestJS framework, mades incremental feature update possible.
 
 ## Core dependencies
+- JS Framework 👉 NodeJS 8.10.61
 - Language 👉 TypeScript 2.9.2
-- Framework 👉 Express 4.17.1
+- Web Framework 👉 Express 4.17.1
 - ORM 👉 Typeorm: 0.2.25
 - Development Database 👉 Sqlite3 NodeJS Driver 4.0.3
 - Production Database 👉 Postgres NodeJS Driver 8.2.1
