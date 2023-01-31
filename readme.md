@@ -1,14 +1,25 @@
 
 # Express JWT Template
 
+<img width="705" alt="Logo" src="https://user-images.githubusercontent.com/33037271/215788063-6b8d5ca3-3258-461f-9b57-5a0664b4df16.png">
+
+Provide a light TypeScript implementation on JWT with only express and TypeORM used.
+Without implementing JWT without passport.JS library and NestJS framework, mades incremental feature update possible.
+
+## Core dependencies
+- Language 👉 TypeScript 2.9.2
+- Framework 👉 Express 4.17.1
+- ORM 👉 Typeorm: 0.2.25
+- Development Database 👉 Sqlite3 NodeJS Driver 4.0.3
+- Production Database 👉 Postgres NodeJS Driver 8.2.1
+- Documentation 👉 swagger-ui-express
+
 ## How to run this project
 ```
 npx degit https://github.com/alantsui5/express-template/
+cd express-template
 npm run dev
 ```
-
-## Origin
-It is a express template forked from [jwt-express-typeorm](https://github.com/andregardi/jwt-express-typeorm) with medium article [TypeScript Rest API with Express.js, JWT, Authorization Roles and TypeORM](https://medium.com/javascript-in-plain-english/creating-a-rest-api-with-jwt-authentication-and-role-based-authorization-using-typescript-fbfa3cab22a4)
 
 ## Fixes
 However, it fixed some bug that occur in that repository includes
@@ -36,3 +47,7 @@ These Routes need to be in role admin
 *  Get: `/login`: Login
 * Post: `/register`: Register
 * Post: `/change-password`: Change Password, need JWT
+
+
+## Reference
+It is a express template forked from [jwt-express-typeorm](https://github.com/andregardi/jwt-express-typeorm) with medium article [TypeScript Rest API with Express.js, JWT, Authorization Roles and TypeORM](https://medium.com/javascript-in-plain-english/creating-a-rest-api-with-jwt-authentication-and-role-based-authorization-using-typescript-fbfa3cab22a4)
