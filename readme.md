@@ -19,7 +19,7 @@ Implementing JWT without passport.JS library and NestJS framework, mades increme
 ```
 npx degit https://github.com/alantsui5/express-template/
 cd express-template
-npm run dev
+npm run start
 ```
 
 ## Fixes
